@@ -13,5 +13,6 @@ sp = pw.cheaptrick(data, f0, t, fs)
 ap = pw.d4c(data, f0, t, fs)
 
 synthesized = pw.synthesize(f0, sp, ap, fs)
+synthesized = synthesized.astype(np.int16) #データ型を戻す必要あり
 
 wavfile.write(WAV_FILE+"_conversion.wav", fs, synthesized)
